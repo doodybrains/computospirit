@@ -2,13 +2,13 @@
 cd
 sleep .5
 echo " "
-echo "                     getting in touch with file spirits..."
+echo "              🌪 🌪       getting in touch with file spirits... 🌪 🌪"
 echo " "
 
 find . -iname "*.pdf" -print 2>&1 | grep -v "Permission denied" | sed -e 's/^/./' > ./computospirit/one.txt
 
 echo " "
-echo "                     talking to your folders..."
+echo "  🗂 🗂 🗂 talking to your folders... 🗂 🗂 🗂"
 echo " "
 cd computospirit
 
@@ -21,7 +21,7 @@ sed -e 's;pdf; ;g;' ./four.txt > ./message.txt
 sleep 2
 
 echo " "
-echo "                                they have a message for you..."
+echo "                 📎 🦷 🧪 they have a message for you 🧲 🦙 🥬"
 echo " "
 sleep 1
 
