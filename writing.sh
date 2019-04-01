@@ -4,7 +4,7 @@ sleep .5
 echo " "
 echo "      🌪   🌪   🌪   🌪   getting in touch with file spirits 🌪  🌪  🌪  🌪"
 echo " "
-
+sleep .5
 find . -iname "*.pdf" -print 2>&1 | grep -v "Permission denied" | sed -e 's/^/./' > ./computospirit/one.txt &
 PROGRESS=$!
 while kill -0 $PROGRESS 2> /dev/null
@@ -14,7 +14,9 @@ do
 done
 
 echo " "
-echo "🗂   🗂   🗂   talking to your folders...    🗂   🗂   🗂"
+echo " "
+echo "                 🗂   🗂   🗂   talking to your folders...    🗂   🗂   🗂"
+echo " "
 echo " "
 cd computospirit
 
@@ -24,10 +26,9 @@ cat ./two.txt | tr ' ' '\n' > ./three.txt
 shuf ./three.txt --output=./three.txt
 cat ./three.txt | tr '\n' ' ' > ./four.txt
 sed -e 's;pdf; ;g;' ./four.txt > ./message.txt
-sleep 2
-
+sleep 3
 echo " "
-echo "                 📎 🦷 🧪 they have a message for you 🧲 🦙 🥬"
+echo "   📎 🦷 🧪 they have a message for you 🧲 🦙 🥬"
 echo " "
 sleep 1
 
