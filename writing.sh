@@ -2,13 +2,19 @@
 cd
 sleep .5
 echo " "
-echo "              🌪 🌪       getting in touch with file spirits... 🌪 🌪"
+echo "      🌪   🌪   🌪   🌪   getting in touch with file spirits 🌪  🌪  🌪  🌪"
 echo " "
 
-find . -iname "*.pdf" -print 2>&1 | grep -v "Permission denied" | sed -e 's/^/./' > ./computospirit/one.txt
+find . -iname "*.pdf" -print 2>&1 | grep -v "Permission denied" | sed -e 's/^/./' > ./computospirit/one.txt &
+PROGRESS=$!
+while kill -0 $PROGRESS 2> /dev/null
+do
+	echo -n " 🔮 "
+  sleep 1
+done
 
 echo " "
-echo "  🗂 🗂 🗂 talking to your folders... 🗂 🗂 🗂"
+echo "🗂   🗂   🗂   talking to your folders...    🗂   🗂   🗂"
 echo " "
 cd computospirit
 
