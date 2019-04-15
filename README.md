@@ -8,7 +8,9 @@ _a bash script that turns your computer into a medium. through automatic writing
 2. `$ cd computospirit`
 3. you may need to give the bash script the proper execute permission with the following command:
 4. `$ chmod +x writing.sh`
+4. `$ chmod +x random.sh`
+4. `$ chmod +x computospirit.sh`
 5. this script relies on `shuf`, a command that is baked into GNU core command line tools, if you're running MacOS and have homebrew you can install them easily with:
 6. `$ brew install coreutils`
 7. Finally you can ask your computer to get in touch with the file spirits:
-8. `$ ./writing.sh`
+8. `$ ./computospirit.sh`
