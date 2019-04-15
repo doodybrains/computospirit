@@ -2,7 +2,15 @@
 lineNoMax=" "
 sed 's/.\(.\)./\1/' ./seed.txt > ./lineno.txt
 lineNo=`cat lineno.txt`
-lineNoMax+=`expr $lineNo \* 3`
+
+if [[ $lineNo -gt 100 ]]
+then
+	lineNoMax+=`expr $lineNo \* 2`
+else
+	lineNoMax+=`expr $lineNo \* 3`
+fi
+
+
 filename='three.txt'
 n=1
 mess=""
@@ -36,7 +44,7 @@ cat ./two.txt | tr ' ' '\n' > ./three.txt
 shuf ./three.txt --output=./three.txt
 # cat ./three.txt | tr '\n' ' ' > ./four.txt
 # sed -e 's;pdf; ;g;' ./four.txt > ./message.txt
-sleep 2
+sleep 1
 echo " "
 echo "   📎 🦷 🧪  they have a message for you  🧲 🦙 🥬 "
 echo " "
@@ -44,9 +52,7 @@ echo " "
 echo " "
 echo " "
 
-sleep 2
-
-
+sleep 1
 
 while read line; do
 	n=$((n+1))
