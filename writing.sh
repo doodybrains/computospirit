@@ -1,8 +1,9 @@
 #!/bin/bash
+
 cd
 sleep .5
 echo " "
-echo "      🌪   🌪   🌪   🌪   getting in touch with file spirits 🌪  🌪  🌪  🌪"
+echo "          🌪   🌪   🌪   🌪   getting in touch with file spirits 🌪  🌪  🌪  🌪"
 echo " "
 sleep .5
 find . -iname "*.pdf" -print 2>&1 | grep -v "Permission denied" | sed -e 's/^/./' > ./computospirit/one.txt &
@@ -10,9 +11,11 @@ PROGRESS=$!
 while kill -0 $PROGRESS 2> /dev/null
 do
 	echo -n " 🔮 "
-  sleep 1
+  sleep .2
 done
 
+echo " "
+echo " "
 echo " "
 echo " "
 echo "                 🗂   🗂   🗂   talking to your folders...    🗂   🗂   🗂"
@@ -24,15 +27,51 @@ sed -e 's;[\.\/@_~-]; ;g;' ./one.txt > ./two.txt
 shuf ./two.txt --output=./two.txt
 cat ./two.txt | tr ' ' '\n' > ./three.txt
 shuf ./three.txt --output=./three.txt
-cat ./three.txt | tr '\n' ' ' > ./four.txt
-sed -e 's;pdf; ;g;' ./four.txt > ./message.txt
-sleep 3
+# cat ./three.txt | tr '\n' ' ' > ./four.txt
+# sed -e 's;pdf; ;g;' ./four.txt > ./message.txt
+sleep 2
 echo " "
-echo "   📎 🦷 🧪 they have a message for you 🧲 🦙 🥬"
+echo "   📎 🦷 🧪  they have a message for you  🧲 🦙 🥬 "
 echo " "
-sleep 1
+echo " "
+echo " "
+echo " "
+
+sleep 2
+
+sed 's/.\(.\)./\1/' ./seed.txt > ./lineno.txt
+lineNo=`cat lineno.txt`
+lineNoMax=`expr $lineNo + 30`
+filename='three.txt'
+n=1
+mess=""
+
+while read line; do
+	n=$((n+1))
+
+	if [[ $n -gt $lineNo && (lineNoMax -gt $n)]]
+	then
+		mess+=" ${line}"
+	fi
+done < $filename
+
+echo " "
+`echo $mess > random-message.txt`
+echo " "
+echo " "
+echo " "
 
 while IFS= read -r -n1 char; do
 	echo -n "$char"
   sleep .1;
-done < ./message.txt
+done < ./random-message.txt
+
+echo " "
+echo " "
+echo " "
+echo " "
+echo " "
+echo " "
+echo " "
+echo " "
+echo " "
