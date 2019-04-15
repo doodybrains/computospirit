@@ -3,12 +3,14 @@
 generateRandomNumber () {
   for i in {0..3}
   do
-    echo -ne '        this is so                              \r'
-    sleep .4
-    echo -ne '               like                             \r'
-    sleep .6
-    echo -ne '                        ...                     \r'
-    sleep .8
+    echo -ne '        this                                    \r'
+    sleep .5
+    echo -ne '               is                               \r'
+    sleep .5
+    echo -ne '                        so                      \r'
+    sleep .5
+    echo -ne '                                like            \r'
+    sleep .5
     echo -ne '                                         random \r'
     echo -ne '\n'
 
