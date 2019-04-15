@@ -1,4 +1,11 @@
 #!/bin/bash
+lineNoMax=" "
+sed 's/.\(.\)./\1/' ./seed.txt > ./lineno.txt
+lineNo=`cat lineno.txt`
+lineNoMax+=`expr $lineNo \* 3`
+filename='three.txt'
+n=1
+mess=""
 
 cd
 sleep .5
@@ -10,7 +17,7 @@ find . -iname "*.pdf" -print 2>&1 | grep -v "Permission denied" | sed -e 's/^/./
 PROGRESS=$!
 while kill -0 $PROGRESS 2> /dev/null
 do
-	echo -n " 🔮 "
+	echo -n "$lineNoMax 🔮"
   sleep .2
 done
 
@@ -39,12 +46,7 @@ echo " "
 
 sleep 2
 
-sed 's/.\(.\)./\1/' ./seed.txt > ./lineno.txt
-lineNo=`cat lineno.txt`
-lineNoMax=`expr $lineNo + 30`
-filename='three.txt'
-n=1
-mess=""
+
 
 while read line; do
 	n=$((n+1))
