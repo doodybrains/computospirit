@@ -1,4 +1,5 @@
 #!/bin/bash
+
 lineNoMax=" "
 sed 's/.\(.\)./\1/' ./seed.txt > ./lineno.txt
 lineNo=`cat lineno.txt`
@@ -9,7 +10,6 @@ then
 else
 	lineNoMax+=`expr $lineNo \* 3`
 fi
-
 
 filename='three.txt'
 n=1
@@ -60,6 +60,9 @@ while read line; do
 	if [[ $n -gt $lineNo && (lineNoMax -gt $n)]]
 	then
 		mess+=" ${line}"
+	elif [[ $lineNo -eq 0 ]]
+	then
+		mess="             sorry, the spirits don't have any messages for you right now."
 	fi
 done < $filename
 

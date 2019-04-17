@@ -29,7 +29,6 @@ generateRandomNumber () {
     date +"%T" | grep -Eo '[0-9]{1,4}' > time.txt
     echo "$1" >> time.txt
     grep -o '[[:digit:]]*' time.txt | paste -sd+ - | bc >> final-seed.txt
-
   done
 }
 
@@ -44,6 +43,7 @@ reseed () {
   rm final-seed.txt
   rm digits.txt
   rm time.txt
+  
   generateRandomNumber `cat reseed.txt`
   rm reseed.txt
 }
